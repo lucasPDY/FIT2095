@@ -1,0 +1,15 @@
+{
+  "name": "week3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lab03.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^6.1.0",
+    "querystring": "^0.2.0"
+  }
+}
