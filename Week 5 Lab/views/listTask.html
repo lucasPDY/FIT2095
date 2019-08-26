@@ -1,0 +1,57 @@
+<html>
+<style>
+    table {
+        width: 100%;
+    }
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th,
+    td {
+        padding: 15px;
+        text-align: left;
+    }
+    table#t01 tr:nth-child(even) {
+        background-color: #eee;
+    }
+    table#t01 tr:nth-child(odd) {
+        background-color: #fff;
+    }
+    table#t01 th {
+        background-color: black;
+        color: white;
+    }
+</style>
+<body>
+    <table id="t01">
+        <tr>
+            <th>
+                Task Name
+            </th>
+            <th>
+                Task Date
+            </th>
+            <th>
+                Task Description
+            </th>
+        </tr>
+        <% for (let i=0; i < tasks.length; i++){ %>
+        <tr>
+            <td>
+                <%= tasks[i].taskname %>
+            </td>
+            <td>
+                <%= tasks[i].taskdate %>
+            </td>
+            <td>
+                <%= tasks[i].taskdescription %>
+            </td>
+        </tr>
+        <%} %>
+    </table>
+</body>
+Click <a href="/"> HERE</a> to return to home page!!
+</html>
