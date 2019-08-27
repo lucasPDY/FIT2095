@@ -14,6 +14,7 @@ app.set('view engine', 'html');
 // tells express to look for static resources under image and views
 app.use(express.static("image"))
 app.use(express.static("views"))
+app.use(express.static("css"))
 
 // Tells express to use the body parser
 
