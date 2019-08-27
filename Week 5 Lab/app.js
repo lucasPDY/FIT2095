@@ -1,40 +1,31 @@
-// const express = require('express');
-// const app = express();
-
-// // Tells express that there is static resources in views and image
-// app.use(express.static('views'))
-// app.use(express.static('image'))
-// app.get('/', (req, res) => {
-//     res.sendFile("index.html");
-// })
-
-// app.get('/addTask', (req, res) => {
-//     res.send("Add Taks");
-// })
-
-// app.get('/listTask', (req, res) => {
-//     res.send("List Tasks");
-// })
-
-// app.listen(8081);
-
 let express = require('express');
 let app = express();
+
+// Parse incoming request bodies in a middleware before your handlers, 
+// available under the req.body property.
 let parser = require('body-parser');
 
 let db = [];
 
-// render engine
+// render engine configuration
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
+
+// tells express to look for static resources under image and views
 app.use(express.static("image"))
 app.use(express.static("views"))
 
+// Tells express to use the body parser
 
+//  tells the system whether you want to use a simple algorithm for shallow parsing (i.e. false) 
+//  or complex algorithm for deep parsing that can deal with nested objects (i.e. true).
 app.use(parser.urlencoded({
     extended : false
 }))
 
+app.use(parser.json())  //basically tells the system that you want json to be used.
+
+// render index.html every time the homepage is requested
 app.get("/", function (req, res) {
     res.render("index.html")
 });
