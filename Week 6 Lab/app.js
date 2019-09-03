@@ -92,3 +92,12 @@ app.get("/deleteAll", function (req, res) {
       });
     res.redirect('/getTasks');// redirect the client to list Tasks page
 })
+
+app.get('/findtasks/:val1/:val2', function (req, res){
+    let val1 = parseInt(req.params.val1);
+    let val2 = parseInt(req.params.val2);
+    let query = { ID : {$gt: val1, $lt: val2}};
+    db.collection('Tasks').find(query).toArray(function (err,result){
+        res.send(result);
+    })
+})
