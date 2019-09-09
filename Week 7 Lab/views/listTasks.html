@@ -1,0 +1,42 @@
+<html>
+<head>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+</head>
+<body>
+    <h1>List Tasks</h1> </br>
+    <h1> 
+        <a href="/">Home</a>
+        <a href="/insertTask">Insert Tasks</a>
+        <a href="/getTasks">List Tasks</a>
+        <a href="/updateTask">Update Task</a>
+        <a href="/deleteTask">Delete Task</a>
+        <a href="/deleteAll" >Delete Completed Task</a>
+        <a href="/insertDeveloper" >Insert Developer</a>
+        <a href="/listDeveloper" >List Developers</a>
+
+    </h1>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Task Name</td>
+            <td>Task Person</td>
+            <td>Task Due Date</td>
+            <td>Task Status</td>
+            <td>Task Description</td>
+
+        </tr>
+        <% for (let i=0;i<TasksDb.length;i++){ %>
+            <tr>
+                <td><%= TasksDb[i]._id %></td> </td>
+                <td> <%= TasksDb[i].name%> </td>
+                <td><%= TasksDb[i].person %></td>
+                <td><%= TasksDb[i].date %></td>
+                <td><%= TasksDb[i].status %></td>
+                <td><%= TasksDb[i].description %></td>
+            </tr>
+            <%}%>
+    </table>
+</body>
+</html>
