@@ -1,0 +1,34 @@
+<h1>
+  {{getTitle()}}
+</h1>
+
+<input type="text" [(ngModel)]="myText">
+<h1 font-family="Helvetica" >
+  {{myText}}
+</h1>
+
+<button (click)="getSuffix()">Click me la</button> <button *ngIf="tooManyClicks()"(click)="resetClickCount()">Reset click count</button>
+<h2> You have clicked the button {{getClickCount()}} times</h2>
+
+<ul *ngFor="let object of data"> 
+  <li>
+    {{object.id}},
+    {{object.date}}
+  </li>
+</ul>
+
+<div>
+  Width <input type="text" [(ngModel)]="width">
+  Height <input type="text" [(ngModel)]="height">
+  <h3>The Area of the Rectangle is {{getArea()}}</h3>
+
+</div>
+
+<div>
+  Item <input type="text" [(ngModel)]="item"> <br />
+  <button (click)="addItem()">Add Item</button> 
+  <button (click)="clearItems()">Clear Items</button>
+  <ul *ngFor="let item of db">
+    <li>{{item}}</li>
+  </ul>
+</div>

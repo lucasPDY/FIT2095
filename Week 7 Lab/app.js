@@ -131,13 +131,20 @@ app.post("/addnewDev", function (req, res) {
     res.redirect("/listDeveloper");
 })
 //List all Tasks
-//GET request: send the page to the client. Get the list of documents form the collections and send it to the rendering engine
+// //GET request: send the page to the client. Get the list of documents form the collections and send it to the rendering engine
 app.get('/getTasks', function (req, res) {
     Task.find({}, function (err, docs){
         res.render('listTasks', { TasksDb: docs });
     });
 
 });
+
+app.get('/getTasks', function (req, res) {
+    console.log("Got this far")
+    Task.find({}).sort({name: -1}).limit(5).exec( function(err, docs){
+        res.render('listTasks', { TasksDb: docs });
+    })
+})
 
 app.get('/listDeveloper', function (req, res) {
     Developer.find({}, function(err, docs){
