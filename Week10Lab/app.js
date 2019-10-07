@@ -10,9 +10,7 @@ const path = require('path');
 app.listen(8080);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
 app.use("/", express.static(path.join(__dirname, "dist/Week10Lab")));
-
 
 mongoose.connect('mongodb://localhost:27017/movies', function (err) {
     if (err) {
