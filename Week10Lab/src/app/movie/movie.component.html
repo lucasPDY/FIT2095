@@ -103,7 +103,7 @@
           <td><button type="submit" class="btn btn-primary" (click)="onSelectMovie(movie)">Select</button></td>
         </tr>
     </table>
-    <div *ngIf="actorId.length!=0">
+    <div *ngIf="actorId.length!=0 && selectedMovie.length != 0">
     <h3>Add {{actorName}} to {{selectedMovie}}?</h3>
     <td><button type="submit" class="btn btn-primary" (click)="onAddMovieActor()">Add Actor</button></td>
 

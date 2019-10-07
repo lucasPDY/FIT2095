@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Week10Lab';
+  section = 1;
+  changeSection(sectionId) {
+    this.section = sectionId;
+  }
 }
