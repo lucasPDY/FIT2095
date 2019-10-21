@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div>
+  <div id="chatContainer">
+    Your name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input [(ngModel)]="name" /> <br>
+    Your message: <input [(ngModel)]="messageText" />
+    <button (click)="sendMessage()">Send</button>
+    <div class="container" *ngFor="let item of messages.slice().reverse() ">
+      <p>From {{item.name}}</p>
+      <p>{{item.message}}</p>
+      <span class="time-right">{{item.timeStamp}}</span>
+    </div>
+  </div>
+</div>
+<div class="jumbotron text-center">
+  <p>FIT2095 Chat Application</p>
+  Playing {{file}}
+  <audio id="player"controls src="./{{file}}">
+    <!-- <source src="./{{file}}" type="audio/mp3"> -->
+  Your browser does not support the audio element.
+  </audio>
+</div>
